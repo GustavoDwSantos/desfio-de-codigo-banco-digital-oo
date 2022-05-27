@@ -1,9 +1,17 @@
 import java.util.List;
 
+import Conta.Conta;
+
 public class Banco {
 
+	private int Codigodobanco;
 	private String nome;
 	private List<Conta> contas;
+	
+	
+	public int getCodigodobanco() {
+		return Codigodobanco;
+	}
 
 	public String getNome() {
 		return nome;

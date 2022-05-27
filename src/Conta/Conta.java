@@ -1,3 +1,5 @@
+package Conta;
+import Cliente.Cliente;
 
 public abstract class Conta implements IConta {
 	
@@ -17,7 +19,15 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void sacar(double valor) {
-		saldo -= valor;
+		
+		if (valor <= this.saldo){
+			saldo -= valor;
+		}
+		else{
+			System.out.println("Sua conta não possui saldo o Suficiente para realizar o saque");
+		}
+		
+
 	}
 
 	@Override
@@ -27,8 +37,13 @@ public abstract class Conta implements IConta {
 
 	@Override
 	public void transferir(double valor, IConta contaDestino) {
+		if (valor <= this.saldo){
 		this.sacar(valor);
 		contaDestino.depositar(valor);
+		}
+		else {
+			System.out.println("Sua conta não possui saldo o Suficiente para realizar A transferencia");
+		}
 	}
 
 	public int getAgencia() {
