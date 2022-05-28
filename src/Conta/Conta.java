@@ -1,5 +1,5 @@
 package Conta;
-import Cliente.Cliente;
+import Pessoas.Cliente;
 
 public abstract class Conta implements IConta {
 	
